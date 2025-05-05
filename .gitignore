@@ -1,0 +1,18 @@
+# Vagrant ja virtuaaliympäristön tiedostot
+.vagrant/
+*.box
+
+# Käyttäjän henkilökohtaiset asetukset
+.bash_history
+.bashrc
+.profile
+.bash_logout
+.ssh/
+
+# Python-välitiedostot
+__pycache__/
+*.pyc
+
+# Muut turhat
+*.log
+*.swp
