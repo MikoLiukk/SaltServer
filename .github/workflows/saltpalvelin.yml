@@ -1,0 +1,25 @@
+name: Salt_Palvelin
+
+on:
+  push:
+    paths:
+      - 'srv/salt/**'
+      - 'srv/pillar/**'
+  pull_request:
+
+jobs:
+  salt-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Salt Lint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          pip3 install salt-lint
+
+      - name: Run salt-lint
+        run: |
+          salt-lint srv/salt/**/*.sls
+
